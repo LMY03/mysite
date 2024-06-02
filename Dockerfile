@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Install dependencies
 RUN apt-get update \
-    && apt-get install -y gcc libpq-dev musl-dev libmariadb-dev pkg-config git netcat
+    && apt-get install -y gcc libpq-dev musl-dev libmariadb-dev pkg-config git
 
 # Set working directory
 WORKDIR /app
