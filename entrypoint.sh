@@ -3,6 +3,12 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# Wait for the database to be ready
+echo "Waiting for the database to be ready..."
+while ! nc -z db 3306; do
+  sleep 1
+done
+
 # Navigate to the app directory
 cd /app
 
