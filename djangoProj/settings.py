@@ -78,8 +78,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cap2240db',
         'USER': 'cap-2240',
-        'PASSWORD': 'CAP_2240',
-        'HOST': 'db',
+        'PASSWORD': '123456',
+        'HOST': 'mysql',
         'PORT': 3306,
     }
 }
