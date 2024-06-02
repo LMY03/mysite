@@ -8,7 +8,7 @@ cd /app
 
 # Pull the latest changes from the Git repository
 echo "Pulling the latest changes from the repository..."
-git pull
+git pull origin main
 
 # Install any new dependencies
 pip install --no-cache-dir -r requirements.txt
@@ -21,6 +21,6 @@ python manage.py migrate
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
-# Start the Django development server
+# Start the Django application using Gunicorn
 echo "Starting the Django server..."
 exec gunicorn mysite.wsgi:application --bind 0.0.0.0:8000

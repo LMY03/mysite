@@ -17,7 +17,8 @@ services:
 
   web:
     build: .
-    command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8000
+    container_name: django_app
+    command: /entrypoint.sh
     volumes:
       - .:/app
     ports:
@@ -94,8 +95,7 @@ services:
     environment:
       ANSIBLE_HOST_KEY_CHECKING: "False"
     working_dir: /playbooks
-    entrypoint: ["sh", "-c"]
-    command: ["apk update && apk add --no-cache openssh-client && tail -f /dev/null"]
+    entrypoint: ["sh", "-c", "apk update && apk add --no-cache openssh-client && tail -f /dev/null"]
     networks:
       - app-network
 
