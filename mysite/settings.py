@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qkv+jo-0lz3t((_$m9%j+pk_rgxrkoz$&+5b#$91e0e6m&5mz7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cap2240db',
+        'USER': 'cap-2240',
+        'PASSWORD': 'CAP_2240',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
